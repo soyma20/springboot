@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @AllArgsConstructor
-@RequestMapping("cards")
+@RequestMapping("/cards")
 public class CardController {
     private CardDao cardDao;
 

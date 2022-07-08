@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @AllArgsConstructor
-@RequestMapping("passports")
+@RequestMapping("/passports")
 public class PassportController {
 
     private PassportDao passportDao;
