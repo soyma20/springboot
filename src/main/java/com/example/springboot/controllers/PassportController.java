@@ -1,7 +1,7 @@
 package com.example.springboot.controllers;
 
-import com.example.springboot.dao.PassportDao;
 import com.example.springboot.models.Passport;
+
 import com.example.springboot.services.PassportService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;

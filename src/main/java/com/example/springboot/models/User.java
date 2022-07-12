@@ -8,6 +8,7 @@ import lombok.ToString;
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -35,12 +36,16 @@ public class User {
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "card_id")
     )
-    private List<Card> cards;
+    private List<Card> cards = new ArrayList<>();
 
     public User(String name, Passport passport, List<Card> cards) {
         this.name = name;
         this.passport = passport;
         this.cards = cards;
+    }
+
+    public void addCard(Card card) {
+        this.cards.add(card);
     }
 
     public User(String name) {

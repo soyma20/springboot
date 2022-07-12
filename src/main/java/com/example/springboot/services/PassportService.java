@@ -2,10 +2,14 @@ package com.example.springboot.services;
 
 import com.example.springboot.dao.PassportDao;
 import com.example.springboot.models.Passport;
+import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
+@AllArgsConstructor
 public class PassportService {
     private PassportDao passportDao;
 
