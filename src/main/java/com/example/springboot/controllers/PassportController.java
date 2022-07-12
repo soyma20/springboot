@@ -7,18 +7,19 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
 @AllArgsConstructor
-@RequestMapping("passports")
+@RequestMapping("/passports")
 public class PassportController {
 
     private PassportDao passportDao;
 
     @PostMapping("")
     @ResponseStatus(HttpStatus.ACCEPTED)
-    public void savePassport(@RequestBody Passport passport) {
+    public void savePassport(@RequestBody @Valid Passport passport) {
         passportDao.save(passport);
     }
 

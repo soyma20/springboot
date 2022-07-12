@@ -20,11 +20,8 @@ public class Passport {
     private int id;
     @NotEmpty
     @Size(min = 3, message = "series must be at least 3 chars")
-    @Size(min = 40, message = "series must be smaller than 41 chars")
+    @Size(max = 40, message = "series must be smaller than 41 chars")
     private String series;
-
-    @OneToOne(cascade = CascadeType.ALL, mappedBy = "passport")
-    private User user;
 
     public Passport(String series) {
         this.series = series;

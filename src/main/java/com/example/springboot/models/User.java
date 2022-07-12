@@ -22,7 +22,7 @@ public class User {
     private int id;
     @NotEmpty
     @Size(min = 3, message = "name must be at least 3 chars")
-    @Size(min = 40, message = "name must be smaller than 41 chars")
+    @Size(max = 40, message = "name must be smaller than 41 chars")
     private String name;
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
