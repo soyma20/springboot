@@ -18,7 +18,7 @@ public class CardController {
 
     @PostMapping("")
     @ResponseStatus(HttpStatus.ACCEPTED)
-    public void saveCard(@RequestBody @Valid Card card) {
+    public void saveCard(@RequestBody Card card) {
         cardDao.save(card);
     }
 

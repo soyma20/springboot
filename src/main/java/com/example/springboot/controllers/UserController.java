@@ -41,13 +41,14 @@ public class UserController {
         userService.deleteById(id);
     }
 
-    //    @PatchMapping("")
-//    @ResponseStatus(HttpStatus.ACCEPTED)
-//    public void updateUser(@RequestBody User user) {
-//        userDao.save(user);
-//    }
+    @PatchMapping("/update")
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    public void updateUser(@RequestBody User user) {
+        userService.updateUser(user);
+    }
+
     @PatchMapping("")
-    public ResponseEntity<UserPassportResponseDTO> updateUser(@RequestBody UserPassportRequestDTO dto) {
+    public ResponseEntity<UserPassportResponseDTO> mergeUserAndPassport(@RequestBody UserPassportRequestDTO dto) {
         return new ResponseEntity<>(userService.mergeUserAndPassport(dto), HttpStatus.OK);
     }
 

@@ -1,5 +1,6 @@
 package com.example.springboot.services;
 
+import com.example.springboot.dao.CardDao;
 import com.example.springboot.dao.PassportDao;
 import com.example.springboot.dao.UserDao;
 import com.example.springboot.models.Passport;
@@ -16,6 +17,7 @@ import java.util.List;
 public class UserService {
     private UserDao userDao;
     private PassportDao passportDao;
+    private CardDao cardDao;
 
     public void save(User user) {
         userDao.save(user);
@@ -40,6 +42,10 @@ public class UserService {
         userDao.save(user);
         return new UserPassportResponseDTO(user);
     }
+    public void updateUser(User user){
+        userDao.save(user);
+    }
+
 
 
 }

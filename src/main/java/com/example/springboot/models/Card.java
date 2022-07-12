@@ -18,9 +18,8 @@ public class Card {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @NotEmpty
-    @Size(min = 3, message = "number must be at least 3 chars")
-    @Size(max = 40, message = "number must be smaller than 41 chars")
+
+
     private int number;
 
 
