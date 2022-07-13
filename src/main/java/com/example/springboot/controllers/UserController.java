@@ -52,5 +52,11 @@ public class UserController {
         return new ResponseEntity<>(userService.mergeUserAndPassport(dto), HttpStatus.OK);
     }
 
+    @GetMapping("/activateAccount/{id}")
+    public ResponseEntity<String> avtivateAccount(@PathVariable int id){
+        return userService.activateUser(id);
+    }
+
+
 
 }

@@ -8,6 +8,8 @@ import com.example.springboot.models.User;
 import com.example.springboot.models.dto.UserPassportRequestDTO;
 import com.example.springboot.models.dto.UserPassportResponseDTO;
 import lombok.AllArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,9 +20,11 @@ public class UserService {
     private UserDao userDao;
     private PassportDao passportDao;
     private CardDao cardDao;
+    private MailService mailService;
 
     public void save(User user) {
         userDao.save(user);
+        mailService.sendEmail(user);
     }
 
     public List<User> findAll() {
@@ -46,6 +50,11 @@ public class UserService {
         userDao.save(user);
     }
 
-
+    public ResponseEntity<String> activateUser(int id){
+        User user = findById(id);
+        user.setActivated(true);
+        userDao.save(user);
+        return new ResponseEntity<>("account activated", HttpStatus.OK);
+    }
 
 }

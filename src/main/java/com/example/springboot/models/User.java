@@ -37,6 +37,8 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "card_id")
     )
     private List<Card> cards = new ArrayList<>();
+    private boolean isActivated = false;
+    private String email;
 
     public User(String name, Passport passport, List<Card> cards) {
         this.name = name;
@@ -48,7 +50,8 @@ public class User {
         this.cards.add(card);
     }
 
-    public User(String name) {
+    public User(String name, String email) {
         this.name = name;
+        this.email = email;
     }
 }

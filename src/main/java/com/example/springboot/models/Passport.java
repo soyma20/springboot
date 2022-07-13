@@ -22,8 +22,10 @@ public class Passport {
     @Size(min = 3, message = "series must be at least 3 chars")
     @Size(max = 40, message = "series must be smaller than 41 chars")
     private String series;
+    private String photo;
 
-    public Passport(String series) {
+    public Passport(String series, String photo) {
         this.series = series;
+        this.photo = photo;
     }
 }
