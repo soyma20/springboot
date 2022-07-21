@@ -11,8 +11,15 @@ public class MainController {
     public String get() {
         return "jfaekjfd";
     }
+
+    @GetMapping("/users")
+    public String users() {
+        return "users";
+    }
     @PostMapping("/")
     public String Post(){
         return "yes";
     }
+
+
 }
